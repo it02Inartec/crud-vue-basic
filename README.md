@@ -1,6 +1,5 @@
 # crud-vue-basic
 
-## Information
 This app is for create clients on table whit the data "nombre", "email" y "telefono". read, uptate and delete.
 
 
