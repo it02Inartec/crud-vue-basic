@@ -166,7 +166,8 @@
                 showBorrarModal: false,
                 clientes: [],
                 nuevoCliente: {nombre:"", email:"", telefono:""},
-                clienteActual: {}
+                clienteActual: {},
+                URL_API: "https://api-crud-laravel7.herokuapp.com/api/clients"
             }
         },
         mounted: function () {
@@ -174,7 +175,7 @@
         },
         methods: {
             getAllClients() {
-                this.axios.get("http://api-crud-users-laravel7.test/api/clients")
+                this.axios.get(this.URL_API)
                 .then((res)=>{
                     if (res.data.error) {
                         this.errorMsg = res.data.message;
@@ -186,7 +187,7 @@
             addClient() {
                 this.clearMsg();
                 var formData = this.toFormData(this.nuevoCliente);
-                this.axios.post("http://api-crud-users-laravel7.test/api/clients", formData)
+                this.axios.post(this.URL_API, formData)
                 .then((res)=>{
                     this.nuevoCliente = {nombre:"", email:"", telefono:""};
                     if (res.data.error) {
@@ -200,7 +201,7 @@
             updateClient() {
                 this.clearMsg();
 
-                this.axios.put("http://api-crud-users-laravel7.test/api/clients/"+this.clienteActual.id, this.clienteActual)
+                this.axios.put(this.URL_API+"/"+this.clienteActual.id, this.clienteActual)
                 .then((res)=>{
                     this.clienteActual = {};
                     if (res.data.error) {
@@ -214,7 +215,7 @@
             deleteClient() {
                 this.clearMsg();
                 
-                this.axios.delete("http://api-crud-users-laravel7.test/api/clients/"+this.clienteActual.id)
+                this.axios.delete(this.URL_API+"/"+this.clienteActual.id)
                 .then((res)=>{
                     this.clienteActual = {};
                     if (res.data.error) {
