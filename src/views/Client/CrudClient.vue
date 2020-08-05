@@ -2,10 +2,10 @@
     <div class="client">
         <div class="container">
             <div class="row mt-3">
-                <div class="col-lg-6 col-md-6">
-                    <h3 class="text-info">Registrar Cliente</h3>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                    <h3 class="text-info float-left">Registrar Cliente</h3>
                 </div>
-                <div class="col-lg-6 col-md-6">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                     <button class="btn btn-info float-right" @click="showAgregarModal=true">
                         <i class="fas fa-user"></i>&nbsp;&nbsp;
                         Agregar Nuevo Cliente
@@ -15,45 +15,54 @@
 
             <hr class="bg-info">
 
-            <div class="alert alert-danger" v-if="errorMsg">
-                {{ errorMsg }}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert"  v-if="errorMsg">
+                <strong>Error!</strong> {{ errorMsg }}.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="alert alert-success" v-if="successMsg">
-                {{ successMsg }}
+
+            <div class="alert alert-success alert-dismissible fade show" role="alert" v-if="successMsg">
+                <strong>Success!</strong> {{ successMsg }}.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             
             <div class="row">
-                <div class="col-lg-12">
-                    <table class="table table-bordered table-striped">
-                        <thead>
-                            <tr class="text-center bg-info text-light">
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>e-mail</th>
-                                <th>Telefono</th>
-                                <th>Editar</th>
-                                <th>Borrar</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="text-center" v-for="cliente in clientes" v-bind:key="cliente.id">
-                                <td>{{ cliente.id }}</td>
-                                <td>{{ cliente.nombre }}</td>
-                                <td>{{ cliente.email }}</td>
-                                <td>{{ cliente.telefono }}</td>
-                                <td>
-                                    <a href="#" class="text-success" @click="showEditarModal=true; selectClient(cliente);">
-                                        <i class="fas fa-edit"></i>
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="#" class="text-danger" @click="showBorrarModal=true; selectClient(cliente);">
-                                        <i class="fas fa-trash-alt"></i>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr class="text-center bg-info text-light">
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>e-mail</th>
+                                    <th>Telefono</th>
+                                    <th>Editar</th>
+                                    <th>Borrar</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="text-center" v-for="cliente in clientes" v-bind:key="cliente.id">
+                                    <td>{{ cliente.id }}</td>
+                                    <td>{{ cliente.nombre }}</td>
+                                    <td>{{ cliente.email }}</td>
+                                    <td>{{ cliente.telefono }}</td>
+                                    <td>
+                                        <a href="#" class="text-success" @click="showEditarModal=true; selectClient(cliente);">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="text-danger" @click="showBorrarModal=true; selectClient(cliente);">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
