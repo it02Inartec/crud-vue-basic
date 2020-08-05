@@ -4,13 +4,13 @@
         <div class="row bg-dark">
             <div class="col-lg-12">
                 <p class="text-center text-light display-4 pt-2"
-                style="font-size: 25px;">Aplicación CRUD usando Vue.js, Laravel 7, vue-axios, PostgreSQL & Bootstrap 4</p>
+                style="font-size: 25px;">Crud-Vue-Basic</p>
             </div>
         </div>
     </div>
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/client">Client</router-link>
+      <router-link to="/">Inicio</router-link> |
+      <router-link to="/client">Clientes</router-link>
     </div>
     <router-view/>
   </div>

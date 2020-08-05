@@ -1,6 +1,7 @@
 # crud-vue-basic
 
-This app is for create clients on table whit the data "nombre", "email" y "telefono". read, uptate and delete.
+This app is for create, read, uptate and delete clients on table with the data "name", "email" y "phone". 
+Code from API https://github.com/it02Inartec/api-crud-laravel7
 
 
 ## Project setup
@@ -11,11 +12,6 @@ npm install
 ### Compiles and hot-reloads for development
 ```
 npm start
-```
-
-### Compiles and minifies for production
-```
-npm run build
 ```
 
 ## Tutorials base
